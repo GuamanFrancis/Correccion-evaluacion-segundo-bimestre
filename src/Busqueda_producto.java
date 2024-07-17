@@ -65,7 +65,7 @@ public class Busqueda_producto extends JFrame{
             datos.append("descipcion: ").append(RS.getString("descripcion")).append("\n ");
             datos.append("precio: ").append(RS.getString("precio")).append("\n ");
             datos.append("cantidad: ").append(RS.getString("cantidad")).append(" \n");
-            datos.append("cantidad: ").append(RS.getString("cantidad")).append(" \n");
+            datos.append("categoria: ").append(RS.getString("categoria")).append(" \n");
 
             JOptionPane.showMessageDialog(null,datos);
 

@@ -21,6 +21,14 @@ public class Registro_producto extends JFrame{
         ingresarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                try{
+                    Registrarproductos();
+                }catch (SQLException ex){
+                    System.out.println(ex.getMessage());
+                }
+
+
+
 
             }
         });
@@ -36,8 +44,8 @@ public class Registro_producto extends JFrame{
 
     public void ingresar(){
         setVisible(true);
-        setLocationRelativeTo(null);
         setSize(500,600);
+        setLocationRelativeTo(null);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
     }
@@ -58,7 +66,7 @@ public class Registro_producto extends JFrame{
         Double precio = Double.parseDouble(pre.getText());
         String cantidad = cant.getText();
         String cateogira = cat.getText();
-        String sql = "INSERT  INTO producto(codigo_producto,nombre,description,precio,cantidad,cateogira)values(?,?,?,?,?,?,)";
+        String sql = "INSERT  INTO producto(codigo_producto,nombre,descripcion,precio,cantidad,categoria)values(?,?,?,?,?,?)";
         PreparedStatement stmt = conectar.prepareStatement(sql);
         stmt.setString(1,cod);
         stmt.setString(2,nombre);
